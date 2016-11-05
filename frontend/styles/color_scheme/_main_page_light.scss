@@ -1,0 +1,78 @@
+//main_page=============================================================================================================
+$main_page_tab_color: #363640;
+$main_page_tab_color_active: #ffffff;
+$main_page_tab_bg: #ffffff;
+$main_page_gif: url("../Images/ajax-loader-w.gif");
+@mixin main_page_tab_icon{
+	&:before {
+		content: '';
+		display: inline-block;
+		width: 18px;
+		height: 38px;
+		margin-top: -2px;
+		margin-right: 5px;
+		background: url(../Images/sprite.svg) no-repeat -326px -147px;
+		vertical-align: middle;
+		transition: 0.4s ease-out;
+	}
+	&:nth-of-type(2):before{  background-position: -367px -147px;  }
+	&:nth-of-type(3):before{  background-position: -407px -147px;  }
+	&:nth-of-type(4):before{  background-position: -446px -147px;  }
+	&:nth-of-type(5):before{  background-position: -486px -147px;  }
+}
+@mixin  main_page_tab_icon_active{
+	background: #64c9ef;
+	box-shadow: inset 0 -30px 20px -8px #3498da;
+	color: $main_page_tab_color;
+	&:before{ background-position: -326px -176px; }
+	&:nth-of-type(2):before{  background-position: -367px -176px;  }
+	&:nth-of-type(3):before{  background-position: -407px -176px;  }
+	&:nth-of-type(4):before{  background-position: -446px -176px;  }
+	&:nth-of-type(5):before{  background-position: -486px -176px;  }
+}
+
+$main_page_event_title: #000000;
+$main_page_event_chart_button: url(../Images/sprite.svg) no-repeat -166px -354px;
+@mixin main_page_event_bg{  background: #ffffff; }
+@mixin main_page_event_icon{
+	&.sport:before{  background-position: -68px -306px;  }
+	&.e_sport:before{  background-position: -186px -306px;  }
+	&.finance:before{  background-position: -107px -306px;  }
+	&.society:before{  background-position: -27px -306px;  }
+
+	&.soccer:before{  background-position: -27px -517px;  }
+	&.rugby:before{  background-position: -59px -517px;  }
+	&.basketball:before{  background-position: -88px -517px;  }
+	&.tennis:before{  background-position: -117px -517px;  }
+	&.volleyball:before{  background-position: -147px -517px;  }
+	&.hockey:before{  background-position: -176px -517px;  }
+	&.baseball:before{  background-position: -207px -517px;  }
+	&.boxing:before{  background-position: -237px -517px;  }
+	&.horse_racing:before{  background-position: -269px -517px;  }
+	&.politics:before{  background-position: -297px -517px;  }
+	&.currencies:before{  background-position: -324px -517px;  }
+	&.indexes:before{  background-position: -350px -517px;  }
+	&.dota2:before{  background-position: -27px -552px;  }
+	&.csgo:before{  background-position: -59px -552px;  }
+	&.lol:before{  background-position: -85px -552px;  }
+}
+@mixin main_page_event_button{
+	box-shadow: inset 0 -18px 25px -8px rgba(0, 0, 0, 0.3);
+	transition: 0.2s ease;
+	&[disabled]{  cursor: default;  }
+	&:not([disabled]):active {
+		box-shadow: inset 0 2px 25px -8px rgb(0, 0, 0);
+	}
+}
+@mixin main_page_event_active{
+	background: $link-color;
+	box-shadow: none;
+}
+$main_page_event_opacity: 0.05;
+$main_page_event_info_pl_bg: -396px -566px;
+$main_page_event_info_pos_bg: -445px -566px;
+@mixin pricing_plans_separate{
+	border-right: 1px solid #dce1e6 * 0.95;
+	&:last-child h2{  color: #e5e4e2; text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);  }
+}
+

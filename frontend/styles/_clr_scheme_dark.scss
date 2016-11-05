@@ -1,0 +1,77 @@
+$main-bg: #211e25;
+$link-color: #3498da;
+$main-color: transparentize(#ffffff, 0.2);
+$main-color-darker: #dedede;
+$main-color-hover: #ffffff;
+$default-button-bg: #211e25;
+$active_bg: linear-gradient(to top, #bdc0cd, #ffffff);
+$bg_color: linear-gradient(to bottom, #53515e, #292830);
+
+$checkbox_bg: #53525d;
+$checkbox_label_color: #ffffff;
+
+$help_block: url("../Images/sprite.svg") no-repeat -50px -182px;
+
+
+$warning_message_bg: linear-gradient(to bottom, #3a3943, #292830);
+$warning_message_arrow: #3a3943;
+
+@mixin regulator{
+	border-left: 1px solid #211e25;
+	border-right: 1px solid #211e25;
+	background: #3b3a44;
+	box-shadow: none;
+	span{
+		&:active{  background-color: #000000;  }
+		&:first-of-type{  border-bottom: 1px solid #211e25;  }
+		&:last-of-type{  line-height: 12px;  }
+		&:first-of-type{
+			border-bottom: 1px solid #211e25;
+			line-height: 16px;
+			&:after{
+				border: 3px solid transparent;
+				border-bottom: 5px solid transparentize(#ffffff, 0.4);
+				top: 2px;
+			}
+		}
+		&:last-of-type{
+			line-height: 15px;
+			&:after{
+				border: 3px solid transparent;
+				border-top: 5px solid transparentize(#ffffff, 0.4);
+				top: 5px;
+			}
+		}
+	}
+}
+
+$breadcrumbs-bg: linear-gradient(to bottom, #53515e, #292830);
+$breadcrumbs-color: transparentize(#ffffff, 0.5);
+
+@mixin chart{
+	svg > text:last-of-type{  visibility: hidden;  }
+	.highcharts-container{
+		padding-top: 10px;
+		border-radius: 6px;
+		background: linear-gradient(to bottom, #211e25, #292830);
+	}
+	rect.highcharts-background{
+		fill: transparent;
+	}
+	.highcharts-grid, .highcharts-axis{
+		path{  stroke: #3a3a3a;  }
+	}
+	text{
+		color: transparentize(#ffffff, 0.6) !important;
+		fill: transparentize(#ffffff, 0.6) !important;
+	}
+	.highcharts-tooltip path, .highcharts-button rect{  fill: #53515e;  }
+}
+
+@import "color_scheme/main_page_dark";
+@import "color_scheme/ordred_sidebar_dark";
+@import "color_scheme/trader_dark";
+@import "color_scheme/sign_in_dark";
+@import "color_scheme/registration_dark";
+@import "color_scheme/event_page_dark";
+@import "color_scheme/my_position_dark";

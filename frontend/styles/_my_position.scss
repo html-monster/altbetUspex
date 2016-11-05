@@ -1,0 +1,327 @@
+.content_my_position {
+  @include span(7.6 of 12);
+  @include push (1.8 of 12);
+  margin-top: 70px;
+  .my_position {
+		padding: 15px;
+    .container {
+			padding: 15px;
+			background: $my_pos_main_bg;
+			border-radius: 4px;
+		}
+		.tabs { @include my_pos_tab_container_styles; }
+		.tab {
+			display: inline-block;
+			padding: 10px 15px;
+			border-radius: 5px 5px 0 0;
+			border: 1px solid transparent;
+			color: transparentize($my_pos_color, 0.3);
+			font-size: 14px;
+			@include my_pos_tab;
+			&.active {
+				color: $my_pos_color;
+				@include my_pos_active_tab;
+			}
+		}
+		.tab_item {
+			display: none;
+			&:nth-child(2) {  display: block;  }
+		}
+		.my_position_tab {
+			.filters {
+				margin: 20px 0;
+				.checkbox {  display: none;  }
+				.checkbox:checked + label{
+					color: #ffffff;
+					//background: #84d65b;
+					//box-shadow: inset 0 -16px 20px -6px rgba(77, 172, 46, 0.8);
+					background: #64c9ef;
+					box-shadow: inset 0 -16px 20px -6px #3498da;
+					&:before{  opacity: 1;  }
+					&.sport:before {  background-position: -66px -275px;  }
+					&.finance:before {  background-position: -107px -275px;  }
+					&.e_sport:before {  background-position: -187px -275px;  }
+					&.society:before {  background-position: -26px -275px;  }
+				}
+				.checkbox:not(checked) + label{
+					padding: 7px 10px 7px 35px;
+					color: rgba(18, 28, 28, 0.5);
+					font-size: 14px;
+					background: #dce1e6;
+					border-radius: 4px;
+					cursor: pointer;
+					transition: 0.4s ease-out;
+					box-shadow: inset 0 -16px 20px -6px rgba(77, 172, 46, 0);
+					span{  transition: 0s;  }
+				}
+				label{
+					position: relative;
+					user-select: none;
+					&:before{
+						content: '';
+						display: block;
+						width: 22px;
+						height: 22px;
+						background: url(../Images/sprite.svg) no-repeat;
+						position: absolute;
+						top: calc(50% - 11px);
+						left: 10px;
+						opacity: 0.5;
+						transition: 0.4s ease-out;
+					}
+					&.sport:before{  background-position: -66px -304px;  }
+					&.e_sport:before{  background-position: -187px -304px;  }
+					&.finance:before{  background-position: -107px -304px;  }
+					&.society:before{  background-position: -26px -304px;  }
+				}
+			}
+			.filter_item{
+				display: none;
+				&.active{  display: block;  }
+			}
+			.table_content{
+				table {
+					margin-top: 0;
+					width: 100%;
+				}
+				thead {
+					border-bottom: $my_pos_thead_border;
+					th {
+						width: 10%;
+						padding: 10px 12px;
+						padding-right: 0;
+						font-size: 14px;
+						color: $my_pos_color;
+						text-align: left;
+						&:nth-of-type(1){  width: 25%;  }
+						&:nth-of-type(2){  width: 16%;  }
+						&:nth-last-of-type(2){  width: 9%;  }
+						&.filter{
+							cursor: pointer;
+							&:after {
+								content: '';
+								display: inline-block;
+								width: 10px;
+								height: 12px;
+								background: url(../Images/sprite.svg) no-repeat -164px -93px;
+								margin-left: 2px;
+								vertical-align: middle;
+							}
+							&.selection:after{  margin-left: -16px;  }
+						}
+						@include md(1600){  font-size: 12px;  }
+					}
+				}
+				tbody {
+					tr {
+						border-bottom: 1px solid $my_pos_tr_border_color;
+						&:nth-child(even){
+							background-color: transparentize(#dce1e6, 0.7);
+						}
+						&.buy{  background: linear-gradient(to bottom, transparentize(#64c9ef, 0.9), transparentize(#3498da, 0.9));  }
+						&.sell{  background: linear-gradient(to bottom, transparentize(#f88447, 0.9), transparentize(#ef4d22, 0.9));  }
+					}
+					td {
+						padding: 10px 12px;
+						padding-right: 0;
+						font-size: 12px;
+						color: $my_pos_color;
+						position: relative;
+						@include my_pos_td_and_button;
+						.waves-ripple{  display: block;  }
+						span{
+							&.last_price:before{
+								content: '';
+								display: inline-block;
+								width: 9px;
+								height: 9px;
+								vertical-align: middle;
+								background: url("../Images/sprite.svg") no-repeat;
+							}
+							&.sell{
+								color: #3498da;
+								&:before{
+									margin-top: -2px;
+									background-position: -234px -155px;
+								}
+							}
+							&.buy{
+								color: #ef4d22;
+								&:before{
+									background-position: -234px -135px;
+								}
+							}
+							&.up{  color: #4dac2e;  }
+							&.down{  color: #ff3905;  }
+						}
+					}
+				}
+				.divider, .ddArrow{  display: none;  }
+				.dd .ddTitle{  background: none;  }
+				.dd .ddTitle .ddTitleText {  padding-left: 0;  }
+				.dd .ddChild {  top: 42px !important;  }
+			}
+			.open_orders{
+				thead {
+					th {
+						width: 8%;
+						&:nth-of-type(2){  width: 15%;  }
+						&:nth-of-type(3), &:nth-of-type(4), &:nth-of-type(5),
+						&:nth-of-type(6), &:nth-of-type(7){  padding: 0;  text-align: center;  }
+						&:nth-last-of-type(1){  width: 20%;  min-width: 74px;  }
+					}
+				}
+				tbody td{
+					width: 8%;
+					&:nth-of-type(1){  width: 25%;  }
+					&:nth-of-type(2){  width: 15%;  }
+					&:nth-of-type(3), &:nth-of-type(4), &:nth-of-type(5),
+					&:nth-of-type(6), &:nth-of-type(7){  padding: 0;  text-align: center;  }
+					&:nth-last-of-type(1){  width: 20%;  min-width: 74px;
+						text-align: right;  }
+				}
+				.filter_item.active{  display: table-row-group;  }
+			}
+			.my_position_container{
+				& > table thead th{
+					background: none;
+					color: $main-color;
+					&:after{  display: none;  }
+				}
+				thead th{
+					width: 11%;
+					padding: 10px 0;
+					background: linear-gradient(to bottom, #3a3942, #292830);
+					color: rgba(255, 255, 255, 0.8);
+					text-align: center;
+					//background: linear-gradient(to bottom, transparentize(#3a3942, 0.8), transparentize(#292830, 0.8));
+					position: relative;
+					&:after{
+						content: '';
+						display: block;
+						width: 100%;
+						height: 1px;
+						position: absolute;
+						left: 0;
+						top: 0;
+						background: rgba(255, 255, 255, 0.1);
+					}
+					&:nth-of-type(1){  width: 25%;  padding-left: 12px;  text-align: left;  }
+					&:nth-of-type(2){  width: 8%;  }
+					&:last-of-type{  width: 20%;  padding-right: 12px;  text-align: right;  }
+					.close_out{
+						background-image: linear-gradient(to bottom, #646470, #34343d);
+						line-height: 10px;
+					}
+				}
+				tbody{
+					tr{
+						&.sell{
+							td:first-of-type:before{
+								background: linear-gradient(to right, rgba(239, 77, 34, 0.2), transparent);
+							}
+							&.clickable:hover{
+								background: linear-gradient(to bottom, rgba(248, 132, 71, 0.3), rgba(239, 77, 34, 0.3));
+							}
+						}
+						&.buy{
+							td:first-of-type:before{
+								background: linear-gradient(to right, rgba(52, 152, 218, 0.2), transparent);
+							}
+							&.clickable:hover{
+								background: linear-gradient(to bottom, rgba(100, 201, 239, 0.3), rgba(52, 152, 218, 0.3));
+							}
+						}
+					}
+					td{
+						padding: 10px 0;
+						text-align: center;
+						&:first-of-type:before{
+							content: '';
+							display: block;
+							width: 0;
+							height: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+							background: linear-gradient(to right, transparentize(white, 0.7), transparent);
+							transition: 0.4s ease-out;
+						}
+						//&:nth-last-of-type(4){  padding: 0;  text-align: center;  }
+						&:first-of-type{  padding-left: 12px; text-align: left;  }
+						&:last-of-type{  text-align: right;  }
+					}
+				}
+				.clickable{
+					cursor: pointer;
+					&.active{  
+						//border-left: 2px solid $link-color;
+						td:first-of-type:before{  width: 100%;  }
+						strong.title{  color: #4dac2e; transition: 0.4s ease-out;  }
+					}
+				}
+			}
+			.open_orders, .my_position_container, .my_order_history {
+				thead {
+					.sell{  color: #3498da;  }
+					.buy{  color: #ef4d22;  }
+					.profit{  color: #4dac2e;  }
+					.loss{  color: #ff3905;  }
+				}
+				tbody{
+					tr{
+						&.sell .quantity{  color: #ef4d22;  }
+						&.buy .quantity{  color: #3498da;  }
+					}
+					td{
+						&:last-of-type{  padding-right: 12px;  }
+						&.quantity{  padding: 0; text-align: center;  }
+						&.profit{  color: #4dac2e;  }
+						&.loss{  color: #ff3905;  }
+						&.pl{  padding: 0;  text-align: center;  }
+						&.pos{
+							text-indent: -9999px;
+							&:before{
+								content: '';
+								display: block;
+								width: 16px;
+								height: 16px;
+								position: absolute;
+								top: calc(50% - 8px);
+								left: 27px;
+								background: url("../Images/sprite.svg") no-repeat -285px -177px;
+							}
+						}
+						.time{  opacity: 0.6;  }
+					}
+				}
+				p{
+					padding: 12px;
+					font-size: 14px;
+					color: $main-color;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+			.my_order_history{
+				thead th{
+					padding-left: 5px;
+					&:nth-child(3){  text-align: center;  }
+					&:nth-last-of-type(1){  width: 12%;  }
+					&:nth-last-of-type(2){  width: 10%;  text-align: center;  }
+					&:nth-last-of-type(3){  padding: 0;  text-align: center;}
+				}
+				tbody td{
+					padding-left: 5px;
+					&:nth-child(3), &:nth-last-of-type(2){  text-align: center;  }
+				}
+			}
+		}
+  }
+	#my_position_container{
+		min-height: 45px;
+		position: relative;
+	}
+}
+

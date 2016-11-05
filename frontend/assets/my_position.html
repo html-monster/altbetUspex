@@ -1,0 +1,508 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Altbet</title>
+  <link href="/styles/index_light.css" rel="stylesheet">
+  <script src="/js/access.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+
+  <div include-html="include/header.html"></div>
+
+  <div include-html="include/main-menu.html"></div>
+
+  <div class="content_my_position">
+    <div class="my_position">
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li>My position</li>
+      </ul>
+      <div class="container">
+        <div class="tabs">
+          <span class="tab">Open orders</span>
+          <span class="tab active">My positions</span>
+          <span class="tab">History</span>
+        </div>
+        <div class="tab_content">
+          <div class="tab_item">
+            <div class="my_position_tab">
+              <div class="wrapper">
+
+                <div class="filters">
+                  <input type="checkbox" id="cb1" class="checkbox" value="tab1" checked/>
+                  <label for="cb1" class="sport"><span class="sub_tab">Sport</span></label>
+                  <input type="checkbox" id="cb2" class="checkbox" value="tab2" checked/>
+                  <label for="cb2" class=
+                          "finance"><span class="sub_tab">Finance</span></label>
+                  <input type="checkbox" id="cb3" class="checkbox" value="tab3" checked/>
+                  <label for="cb3" class="e_sport"><span class="sub_tab">E-sport</span></label>
+                  <input type="checkbox" id="cb4" class="checkbox" value="tab4" checked/>
+                  <label for="cb4" class="society"><span class="sub_tab">Society</span></label>
+                </div>
+                <div class="tab_content">
+                  <div class="open_orders table_content">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Symbol</th>
+                          <th>Time</th>
+                          <th>Type</th>
+                          <th>Quantity</th>
+                          <th>Price</th>
+                          <th>Latest</th>
+                          <th>Position</th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody class="showhide active" id="tab1">
+                        <tr class="buy">
+                          <td class="title">USD/UAH25-31.06.16</td>
+                          <td><span class="date">14.03.16</span> | <span class="time">19:09</span></td>
+                          <td>Buy</td>
+                          <td class="quantity">200</td>
+                          <td>0.33</td>
+                          <td><span class="sell last_price">0.36</span></td>
+                          <td></td>
+                          <td>
+                            <button class="edit btn wave">Edit</button>
+                          </td>
+                          <td>
+                            <button class="delete btn wave">Cancel</button>
+                          </td>
+                        </tr>
+                        <tr class="buy">
+                          <td class="title">USD/UAH25-31.06.16</td>
+                          <td><span class="date">14.03.16</span> | <span class="time">19:09</span></td>
+                          <td>Buy</td>
+                          <td class="quantity">200</td>
+                          <td>0.33</td>
+                          <td><span class="sell last_price">0.36</span></td>
+                          <td></td>
+                          <td>
+                            <button class="edit btn wave">Edit</button>
+                          </td>
+                          <td>
+                            <button class="delete btn wave">Cancel</button>
+                          </td>
+                        </tr>
+                        <tr class="sell">
+                          <td class="title">USD/UAH25-31.06.16</td>
+                          <td><span class="date">14.03.16</span> | <span class="time">19:09</span></td>
+                          <td>Sell</td>
+                          <td class="quantity">200</td>
+                          <td>0.33</td>
+                          <td><span class="sell last_price">0.36</span></td>
+                          <td></td>
+                          <td>
+                            <button class="edit btn wave">Edit</button>
+                          </td>
+                          <td>
+                            <button class="delete btn wave">Cancel</button>
+                          </td>
+                        </tr>
+                        <tr class="buy">
+                          <td class="title">USD/UAH25-31.06.16</td>
+                          <td><span class="date">14.03.16</span> | <span class="time">19:09</span></td>
+                          <td>Buy</td>
+                          <td class="quantity">200</td>
+                          <td>0.33</td>
+                          <td><span class="buy last_price">0.36</span></td>
+                          <td class="pos">position</td>
+                          <td></td>
+                          <td>
+                            <button class="show btn wave">Show</button>
+                          </td>
+                        </tr>
+                        <tr class="buy">
+                          <td class="title">USD/UAH25-31.06.16</td>
+                          <td><span class="date">14.03.16</span> | <span class="time">19:09</span></td>
+                          <td>Buy</td>
+                          <td class="quantity">200</td>
+                          <td>0.33</td>
+                          <td><span class="sell last_price">0.36</span></td>
+                          <td></td>
+                          <td>
+                            <button class="edit btn wave">Edit</button>
+                          </td>
+                          <td>
+                            <button class="delete btn wave">Cancel</button>
+                          </td>
+                        </tr>
+                        <tr class="sell">
+                          <td class="title">USD/UAH25-31.06.16</td>
+                          <td><span class="date">14.03.16</span> | <span class="time">19:09</span></td>
+                          <td>Sell</td>
+                          <td class="quantity">200</td>
+                          <td>0.33</td>
+                          <td><span class="buy last_price">0.36</span></td>
+                          <td class="pos">position</td>
+                          <td></td>
+                          <td>
+                            <button class="show btn wave">Show</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab_item">
+            <div class="my_position_tab">
+              <div class="wrapper">
+                <div class="filters">
+                  <input type="checkbox" id="cb5" class="checkbox" value="tab5" checked />
+                  <label for="cb5" class="sport"><span class="sub_tab">Sport</span></label>
+                  <input type="checkbox" id="cb6" class="checkbox" value="tab6" checked/>
+                  <label for="cb6" class="finance"><span class="sub_tab">Finance</span></label>
+                  <input type="checkbox" id="cb7" class="checkbox" value="tab7" checked/>
+                  <label for="cb7" class="e_sport"><span class="sub_tab">E-sport</span></label>
+                  <input type="checkbox" id="cb8" class="checkbox" value="tab8" checked/>
+                  <label for="cb8" class="society"><span class="sub_tab">Society</span></label>
+                </div>
+                <!--поменять это ====================================================================================-->
+                <div class="tab_content">
+                  <div class="my_position_container table_content">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Symbol</th>
+                          <th>Type</th>
+                          <th>Quantity</th>
+                          <th>Price</th>
+                          <th><span class="sell">BID</span>|<span class="buy">ASK</span></th>
+                          <th><span class="profit">Profit</span>|<span class="loss">Loss</span></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                    </table>
+                    <div class="filter_item active" id="tab5">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Buffalo Bills - New England Patriot</th>
+                            <th></th>
+                            <th><span class="quantity">150</span></th>
+                            <th></th>
+                            <th></th>
+                            <th><span class="loss">($25.00)</span></th>
+                            <th><button class="btn close_out wave">Close Out</button></th>
+                          </tr>
+                        </thead>
+                        <tbody class="showhide active">
+                          <tr class="sell event-content">
+                            <td class="title">Buffalo Bills</td>
+                            <td>Short</td>
+                            <td class="quantity">70</td>
+                            <td>$0.90</td>
+                            <td><span class="sell">0.69</span>|<span class="buy">0.72</span></td>
+                            <td class="profit pl">$4</td>
+                            <td>
+                              <span class="buy"><button class="buy btn wave empty">Buy</button></span>
+                              <span class="sell"><button class="sell btn wave empty">Sell</button></span>
+                            </td>
+                          </tr>
+                          <tr class="buy event-content">
+                            <td class="title">New England Patriot</td>
+                            <td>Long</td>
+                            <td class="quantity">80</td>
+                            <td>$0.70</td>
+                            <td><span class="sell">0.63</span>|<span class="buy">0.68</span></td>
+                            <td class="loss pl">($6)</td>
+                            <td>
+                              <span class="buy"><button class="buy btn wave empty">Buy</button></span>
+                              <span class="sell"><button class="sell btn wave empty">Sell</button></span>
+                            </td>
+                          </tr>
+                          <!--<tr class="buy event-content">
+                            <td class="title">USD/UAH25-31.06.16</td>
+                            <td>Long</td>
+                            <td class="quantity">200</td>
+                            <td>0.31</td>
+                            <td><span class="sell">0.69</span>|<span class="buy">0.72</span></td>
+                            &lt;!&ndash;<td>0.02</td>&ndash;&gt;
+                            <td class="profit pl">$4</td>
+                            <td class="buy">
+                              <button class="buy btn wave empty">Buy</button>
+                            </td>
+                            <td class="sell">
+                              <button class="sell btn wave empty">Sell</button>
+                            </td>
+                          </tr>
+                          <tr class="sell event-content">
+                            <td class="title">USD/UAH25-31.06.16</td>
+                            <td>Short</td>
+                            <td class="quantity">200</td>
+                            <td>0.66</td>
+                            <td><span class="sell">0.63</span>|<span class="buy">0.68</span></td>
+                            &lt;!&ndash;<td>-0.03</td>&ndash;&gt;
+                            <td class="loss pl">($6)</td>
+                            <td class="buy">
+                              <button class="buy btn wave empty">Buy</button>
+                            </td>
+                            <td class="sell">
+                              <button class="sell btn wave empty">Sell</button>
+                            </td>
+                          </tr>
+                          <tr class="buy event-content">
+                            <td class="title">USD/UAH25-31.06.16</td>
+                            <td>Long</td>
+                            <td class="quantity">200</td>
+                            <td>0.31</td>
+                            <td><span class="sell">0.69</span>|<span class="buy">0.72</span></td>
+                            &lt;!&ndash;<td>0.02</td>&ndash;&gt;
+                            <td class="profit pl">$4</td>
+                            <td class="buy">
+                              <button class="buy btn wave empty">Buy</button>
+                            </td>
+                            <td class="sell">
+                              <button class="sell btn wave empty">Sell</button>
+                            </td>
+                          </tr>
+                          <tr class="sell event-content">
+                            <td class="title">USD/UAH25-31.06.16</td>
+                            <td>Short</td>
+                            <td class="quantity">200</td>
+                            <td>0.31</td>
+                            <td><span class="sell">0.69</span>|<span class="buy">0.72</span></td>
+                            &lt;!&ndash;<td>0.02</td>&ndash;&gt;
+                            <td class="profit pl">$4</td>
+                            <td class="buy">
+                              <button class="buy btn wave empty">Buy</button>
+                            </td>
+                            <td class="sell">
+                              <button class="sell btn wave empty">Sell</button>
+                            </td>
+                          </tr>-->
+                        </tbody>
+                      </table>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Buffalo Bills - New England Patriot</th>
+                            <th></th>
+                            <th><span class="quantity">150</span></th>
+                            <th></th>
+                            <th></th>
+                            <th class="pl"><span class="profit">$25.00</span></th>
+                            <th><button class="btn close_out wave">Close Out</button></th>
+                          </tr>
+                        </thead>
+                        <tbody class="showhide active">
+                        <tr class="sell event-content">
+                          <td class="title">Buffalo Bills</td>
+                          <td>Short</td>
+                          <td class="quantity">70</td>
+                          <td>$0.90</td>
+                          <td><span class="sell">0.69</span>|<span class="buy">0.72</span></td>
+                          <td class="profit pl">$4</td>
+                          <td>
+                            <span class="buy"><button class="buy btn wave empty btnJs">Buy</button></span>
+                            <span class="sell"><button class="sell btn wave empty btnJs">Sell</button></span>
+                          </td>
+                        </tr>
+                        <tr class="buy event-content">
+                          <td class="title">New England Patriot</td>
+                          <td>Long</td>
+                          <td class="quantity">80</td>
+                          <td>$0.70</td>
+                          <td><span class="sell">0.63</span>|<span class="buy">0.68</span></td>
+                          <td class="loss pl">($6)</td>
+                          <td>
+                            <span class="buy"><button class="buy btn wave empty btnJs">Buy</button></span>
+                            <span class="sell"><button class="sell btn wave empty btnJs">Sell</button></span>
+                          </td>
+                        </tr>
+                        <!--<tr class="buy event-content">
+                          <td class="title">USD/UAH25-31.06.16</td>
+                          <td>Long</td>
+                          <td class="quantity">200</td>
+                          <td>0.31</td>
+                          <td><span class="sell">0.69</span>|<span class="buy">0.72</span></td>
+                          &lt;!&ndash;<td>0.02</td>&ndash;&gt;
+                          <td class="profit pl">$4</td>
+                          <td class="buy">
+                            <button class="buy btn wave empty">Buy</button>
+                          </td>
+                          <td class="sell">
+                            <button class="sell btn wave empty">Sell</button>
+                          </td>
+                        </tr>
+                        <tr class="sell event-content">
+                          <td class="title">USD/UAH25-31.06.16</td>
+                          <td>Short</td>
+                          <td class="quantity">200</td>
+                          <td>0.66</td>
+                          <td><span class="sell">0.63</span>|<span class="buy">0.68</span></td>
+                          &lt;!&ndash;<td>-0.03</td>&ndash;&gt;
+                          <td class="loss pl">($6)</td>
+                          <td class="buy">
+                            <button class="buy btn wave empty">Buy</button>
+                          </td>
+                          <td class="sell">
+                            <button class="sell btn wave empty">Sell</button>
+                          </td>
+                        </tr>
+                        <tr class="buy event-content">
+                          <td class="title">USD/UAH25-31.06.16</td>
+                          <td>Long</td>
+                          <td class="quantity">200</td>
+                          <td>0.31</td>
+                          <td><span class="sell">0.69</span>|<span class="buy">0.72</span></td>
+                          &lt;!&ndash;<td>0.02</td>&ndash;&gt;
+                          <td class="profit pl">$4</td>
+                          <td class="buy">
+                            <button class="buy btn wave empty">Buy</button>
+                          </td>
+                          <td class="sell">
+                            <button class="sell btn wave empty">Sell</button>
+                          </td>
+                        </tr>
+                        <tr class="sell event-content">
+                          <td class="title">USD/UAH25-31.06.16</td>
+                          <td>Short</td>
+                          <td class="quantity">200</td>
+                          <td>0.31</td>
+                          <td><span class="sell">0.69</span>|<span class="buy">0.72</span></td>
+                          &lt;!&ndash;<td>0.02</td>&ndash;&gt;
+                          <td class="profit pl">$4</td>
+                          <td class="buy">
+                            <button class="buy btn wave empty">Buy</button>
+                          </td>
+                          <td class="sell">
+                            <button class="sell btn wave empty">Sell</button>
+                          </td>
+                        </tr>-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!--поменять это ====================================================================================-->
+              </div>
+            </div>
+          </div>
+          <div class="tab_item">
+            <div class="my_position_tab">
+              <div class="wrapper">
+                <div class="my_order_history table_content">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Time</th>
+                        <th class="selection">Type
+                          <!--<select name="searchtype" id="searchtype" style="width: 60px;">-->
+                            <!--<option value="-1">All</option>-->
+                            <!--<option value="0">Buy</option>-->
+                            <!--<option value="1">Sell</option>-->
+                            <!--<option value="2">Closed</option>-->
+                          <!--</select>-->
+                        </th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Fees</th>
+                        <th>Profit/Loss</th>
+                        <!--<th>Liquidity</th>-->
+                        <!--<th>Fees</th>-->
+                        <!--<th>Credit/Debit</th>-->
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="buy">
+                        <td class="title">USD/UAH25-31.06.16</td>
+                        <td><span class="date">14.03.16</span> | <span class="time">19:09</span></td>
+                        <td>Long</td>
+                        <td>2</td>
+                        <td>$6.00</td>
+                        <td><span class="down">$0.032</span></td>
+                        <td>$0.33</td>
+                        <!--<td>Add</td>-->
+                        <!--<td>$0.968</td>-->
+                      </tr>
+                      <tr class="sell">
+                        <td class="title">USD/UAH25-31.06.16</td>
+                        <td><span class="date">14.03.16</span> | <span class="time">19:09</span></td>
+                        <td>Short</td>
+                        <td>1</td>
+                        <td>$2.00</td>
+                        <td><span class="down">$0.032</span></td>
+                        <td>$0.33</td>
+                        <!--<td>Reduce</td>-->
+                        <!--<td>$0.968</td>-->
+                      </tr>
+                      <tr>
+                        <td class="title">USD/UAH25-31.06.16</td>
+                        <td>15.03.16 19.09</td>
+                        <td>Closed</td>
+                        <td>1</td>
+                        <td>$4.00</td>
+                        <td><span class="down">$0.032</span></td>
+                        <td>$0.44</td>
+                        <!--<td>Reduce</td>-->
+                        <!--<td>$0.968</td>-->
+                      </tr>
+                      <tr class="buy">
+                        <td class="title">USD/UAH25-31.06.16</td>
+                        <td>15.03.16 19.09</td>
+                        <td>Long</td>
+                        <td>4</td>
+                        <td>$1.00</td>
+                        <td><span class="up">$0.076</span></td>
+                        <td>$0.24</td>
+                        <!--<td>Add</td>-->
+                        <!--<td>$0.567</td>-->
+                      </tr>
+                      <tr>
+                        <td class="title">USD/UAH25-31.06.16</td>
+                        <td>17.03.16 19.09</td>
+                        <td>Closed</td>
+                        <td>2</td>
+                        <td>$1.00</td>
+                        <td><span class="down">$0.032</span></td>
+                        <td>$0.67</td>
+                        <!--<td>Add</td>-->
+                        <!--<td>$0.968</td>-->
+                      </tr>
+                      <tr class="sell">
+                        <td class="title">USD/UAH25-31.06.16</td>
+                        <td>17.03.16 19.09</td>
+                        <td>Short</td>
+                        <td>1</td>
+                        <td>$1.00</td>
+                        <td><span class="up">$0.076</span></td>
+                        <td>$0.32</td>
+                        <!--<td>Reduce</td>-->
+                        <!--<td>$0.567</td>-->
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div include-html="include/order_slide.html"></div>
+
+</div>
+
+<div include-html="include/footer.html"></div>
+
+<script src="/js/vendors.js" defer></script>
+<script src="/js/all.js" defer></script>
+</body>
+</html>
+
+
+

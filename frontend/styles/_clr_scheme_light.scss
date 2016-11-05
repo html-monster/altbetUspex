@@ -1,0 +1,70 @@
+$main-bg: #dce1e6;
+$link-color: #3498da;
+$main-color: #505458;
+$main-color-darker: #273456;
+$main-color-hover: #000000;
+$default-button-bg: #e9eaee;
+$active_bg: linear-gradient(to bottom, #64c9ef, #3498da);
+$bg_color: #fff;
+
+$checkbox_bg: #ffffff;
+$checkbox_label_color: #000000;
+
+$help_block: url("../Images/sprite.svg") no-repeat -50px -162px;
+
+.waves-ripple{  display: none;  }
+
+$warning_message_bg: #ffffff;
+$warning_message_arrow: #ffffff;
+
+@mixin regulator{
+	background: #ffffff;
+	border-right: 1px solid #e9eaee;
+	span{
+		&:active{  background-color: #cccccc;  }
+		&:first-of-type{  border-bottom: 1px solid #d7d7d8;  }
+		&:last-of-type{  line-height: 12px;  }
+		&:first-of-type{
+			border-bottom: 1px solid #e9eaee;
+			line-height: 16px;
+			&:after{
+				border: 3px solid transparent;
+				border-bottom: 5px solid #313d62;
+				top: 2px;
+			}
+		}
+		&:last-of-type{
+			line-height: 15px;
+			&:after{
+				border: 3px solid transparent;
+				border-top: 5px solid #313d62;
+				top: 5px;
+			}
+		}
+
+	}
+}
+
+$breadcrumbs-bg: #ffffff;
+$breadcrumbs-color: transparentize(#000000, 0.5);
+
+@mixin chart{
+	svg > text:last-of-type{  visibility: hidden;  }
+	.highcharts-container{
+		padding-top: 10px;
+		border-radius: 6px;
+		background: #eeeeef;
+		overflow: hidden;
+	}
+	rect.highcharts-background{
+		fill: transparent;
+	}
+}
+
+@import "color_scheme/main_page_light";
+@import "color_scheme/order_sidebar_light";
+@import "color_scheme/trader_light";
+@import "color_scheme/_sign_in_light";
+@import "color_scheme/registration_light";
+@import "color_scheme/event_page_light";
+@import "color_scheme/my_position_light";
